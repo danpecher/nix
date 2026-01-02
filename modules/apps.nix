@@ -54,21 +54,19 @@
 
     ];
 
-    # `brew install --cask`
-    # TODO Feel free to add your favorite apps here.
     casks = [
       # Browsers
       "zen"
 
       # Development
       "zed"
+      "vscodium"
       "ghostty"
       "orbstack"
       "rapidapi"
       "tableplus"
       "proxyman"
       "insomnia"
-      "wireshark-app"
 
       # Productivity
       "raycast"
@@ -79,9 +77,8 @@
       "claude-code"
 
       # Utilities
-      "aerospace"
+      "nikitabobko/tap/aerospace"
       "monitorcontrol"
-      "the-unarchiver"
     ];
   };
 }

@@ -70,7 +70,7 @@
       rebuild = "darwin-rebuild switch --flake ~/code/dotfiles";
     };
 
-    initExtra = ''
+    initContent = ''
       # Homebrew (needs to be early for PATH)
       if [[ -f "/opt/homebrew/bin/brew" ]]; then
           eval "$(/opt/homebrew/bin/brew shellenv)"

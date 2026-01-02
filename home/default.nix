@@ -28,7 +28,7 @@
     file = {
       ".aerospace.toml".source = ../configs/aerospace.toml;
 
-      ".config/ghostty/config".source = ../configs/ghostty/config;
+      ".config/ghostty/config".source = ../configs/ghostty;
 
       ".config/nvim/init.lua".source = ../configs/nvim/init.lua;
 

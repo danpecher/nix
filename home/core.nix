@@ -34,7 +34,7 @@
     # Development Tools
     lazygit         # Terminal UI for git
     delta           # Better git diffs
-    neovim          # Modern vim
+    mise
   ];
 
   programs = {
