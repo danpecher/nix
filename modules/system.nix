@@ -30,7 +30,6 @@
       
       # customize dock
       dock = {
-        autohide = true;
         minimize-to-application = true;
         show-process-indicators = true;
         launchanim = false;
