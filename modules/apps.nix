@@ -43,7 +43,7 @@
     # otherwise Apple Store will refuse to install them.
     # For details, see https://github.com/mas-cli/mas
     masApps = {
-      "Numbers" = 409203825;
+      # "Numbers" = 409203825;
     };
 
     # taps = [];

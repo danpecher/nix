@@ -15,7 +15,7 @@
     fd              # Better find
     fzf             # Fuzzy finder
     bat             # Better cat
-    eza             # Better ls
+    # eza             # Better ls
     zoxide          # Smarter cd
     duf             # Better df
     dust            # Better du
@@ -23,7 +23,7 @@
     htop
     trash-cli       # Move to trash instead of rm
     xh              # Better curl for APIs
-    yazi            # Terminal file manager
+    # yazi            # Terminal file manager
     mcfly           # Better shell history
     navi            # Interactive cheatsheet
     glow            # Makrdown
@@ -38,6 +38,27 @@
   ];
 
   programs = {
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          vscodevim.vim
+          # anthropic.claude-code
+        ];
+        userSettings = {
+          "workbench.colorTheme" = "Visual Studio Dark";
+          "claudeCode.preferredLocation" = "sidebar";
+          "claudeCode.selectedModel" = "opus";
+          "git.autofetch" = true;
+          "workbench.editorAssociations" = {
+              "*.md" = "vscode.markdown.preview.editor";
+          };
+          "workbench.startupEditor" = "none";
+        };
+      };
+    };
+
     # modern vim
     neovim = {
       enable = true;
