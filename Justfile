@@ -1,7 +1,7 @@
 # just is a command runner, Justfile is very similar to Makefile, but simpler.
 
 # TODO update hostname here!
-hostname := "your-hostname"
+hostname := "dan-mbp"
 
 # List all the just commands
 default:

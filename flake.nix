@@ -53,7 +53,7 @@
     username = "dan";
     useremail = "dan.pecher@gmail.com";
     system = "aarch64-darwin";
-    hostname = "mbp-dan";
+    hostname = "dan-mbp";
 
     specialArgs =
       inputs
