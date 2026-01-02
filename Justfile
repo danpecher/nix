@@ -1,11 +1,31 @@
 # just is a command runner, Justfile is very similar to Makefile, but simpler.
 
 # TODO update hostname here!
-hostname := "mbp-dan"
+hostname := "your-hostname"
 
 # List all the just commands
 default:
   @just --list
+
+############################################################################
+#
+#  Darwin related commands
+#
+############################################################################
+
+[group('desktop')]
+darwin:
+  nix build .#darwinConfigurations.{{hostname}}.system \
+    --extra-experimental-features 'nix-command flakes'
+
+  sudo -E ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}}
+
+[group('desktop')]
+darwin-debug:
+  nix build .#darwinConfigurations.{{hostname}}.system --show-trace --verbose \
+    --extra-experimental-features 'nix-command flakes'
+
+  sudo -E ./result/sw/bin/darwin-rebuild switch --flake .#{{hostname}} --show-trace --verbose
 
 ############################################################################
 #
