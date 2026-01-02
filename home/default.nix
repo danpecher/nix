@@ -24,6 +24,20 @@
     # the Home Manager release notes for a list of state version
     # changes in each release.
     stateVersion = "25.11";
+
+    file = {
+      ".aerospace.toml".source = ../configs/aerospace.toml;
+
+      ".config/ghostty/config".source = ../configs/ghostty/config;
+
+      ".config/nvim/init.lua".source = ../configs/nvim/init.lua;
+
+      ".config/kanata/kanata.kbd".source = ../configs/kanata.kbd;
+
+      ".config/mise/config.toml".source = ../configs/mise.toml;
+
+      # ".ssh/config".source = ../private_dot_ssh/config;
+    };
   };
 
   # Let Home Manager install and manage itself.
