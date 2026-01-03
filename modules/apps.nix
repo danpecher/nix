@@ -27,6 +27,11 @@
             "*.md" = "vscode.markdown.preview.editor";
           };
           "workbench.startupEditor" = "none";
+
+          # Vim settings
+          "vim.leader" = "<space>";
+          "vim.easymotion" = true;
+          "vim.easymotionKeys" = "hklyuiopnm,qwertzxcvbasdgjf;";
         };
       };
     };
