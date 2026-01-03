@@ -1,63 +1,51 @@
 { pkgs, ... }:
 {
-  ##########################################################################
-  #
-  #  Install all apps and packages here.
-  #
-  # TODO Fell free to modify this file to fit your needs.
-  #
-  ##########################################################################
-
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Install packages from nix's official package repository.
-  #
-  # The packages installed here are available to all users, and are reproducible across machines, and are rollbackable.
-  # But on macOS, it's less stable than homebrew.
-  #
-  # Related Discussion: https://discourse.nixos.org/t/darwin-again/29331
+  # System-wide packages (available to all users)
   environment.systemPackages = with pkgs; [
     neovim
     git
-    just # use Justfile to simplify nix-darwin's commands
+    just # command runner
   ];
-  environment.variables.EDITOR = "nvim";
 
-  # TODO To make this work, homebrew need to be installed manually, see https://brew.sh
-  #
-  # The apps installed by homebrew are not managed by nix, and not reproducible!
-  # But on macOS, homebrew has a much larger selection of apps than nixpkgs, especially for GUI apps!
+  # VSCodium (via home-manager for user-level config)
+  home-manager.sharedModules = [{
+    programs.vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          vscodevim.vim
+        ];
+        userSettings = {
+          "workbench.colorTheme" = "Visual Studio Dark";
+          "claudeCode.preferredLocation" = "sidebar";
+          "claudeCode.selectedModel" = "opus";
+          "git.autofetch" = true;
+          "workbench.editorAssociations" = {
+            "*.md" = "vscode.markdown.preview.editor";
+          };
+          "workbench.startupEditor" = "none";
+        };
+      };
+    };
+  }];
+
+  # Homebrew (install manually first: https://brew.sh)
   homebrew = {
     enable = true;
 
     onActivation = {
-      autoUpdate = true; # Fetch the newest stable branch of Homebrew's git repo
-      upgrade = true; # Upgrade outdated casks, formulae, and App Store apps
-      # 'zap': uninstalls all formulae(and related files) not listed in the generated Brewfile
-      cleanup = "zap";
+      autoUpdate = true;
+      upgrade = true;
+      cleanup = "zap"; # Remove formulae not in this list
     };
 
-    # Applications to install from Mac App Store using mas.
-    # You need to install all these Apps manually first so that your apple account have records for them.
-    # otherwise Apple Store will refuse to install them.
-    # For details, see https://github.com/mas-cli/mas
-    masApps = {
-      # "Numbers" = 409203825;
-    };
-
-    # taps = [];
-
-    # `brew install`
-    # TODO Feel free to add your favorite apps here.
-    brews = [
-
-    ];
+    masApps = {};
+    brews = [];
 
     casks = [
-      # Browsers
-      "zen"
-
       # Development
       "zed"
       "vscodium"

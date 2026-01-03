@@ -1,4 +1,24 @@
 {...}: {
+  # Starship prompt
+  programs.starship = {
+    enable = true;
+    enableBashIntegration = true;
+    enableZshIntegration = true;
+    enableNushellIntegration = true;
+    settings = {
+      character = {
+        success_symbol = "[›](bold green)";
+        error_symbol = "[›](bold red)";
+      };
+      aws.symbol = "🅰 ";
+      gcloud = {
+        # Hide account/project info to avoid leaking sensitive info when sharing terminal
+        format = "on [$symbol$active(\($region\))]($style) ";
+        symbol = "🅶 ️";
+      };
+    };
+  };
+
   programs.zsh = {
     enable = true;
       
@@ -67,7 +87,7 @@
       mv = "mv -i";
 
       # Nix-darwin
-      rebuild = "darwin-rebuild switch --flake ~/code/dotfiles";
+      rebuild = "darwin-rebuild switch --flake ~/code/nix";
     };
 
     initContent = ''
