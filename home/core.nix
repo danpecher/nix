@@ -35,7 +35,6 @@
     mise
 
     # macOS GUI Apps
-    zed-editor
     ghostty
     orbstack
     rapidapi
@@ -43,8 +42,7 @@
     proxyman
     insomnia
     raycast
-    notion
-    claude
+    notion-app
     claude-code
     aerospace
     monitorcontrol
