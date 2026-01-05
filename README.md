@@ -26,7 +26,7 @@ make gc
 │   └── system.nix      # macOS defaults (dock, keyboard, finder, etc.)
 ├── home/               # User configuration (home-manager)
 │   ├── default.nix     # Entry point + dotfile mappings
-│   ├── core.nix        # User packages and programs
+│   ├── packages.nix    # User packages and programs
 │   ├── shell.nix       # Zsh config and Starship prompt
 │   └── git.nix         # Git configuration
 └── configs/            # Application dotfiles

@@ -2,7 +2,7 @@
 {
   imports = [
     ./shell.nix
-    ./core.nix
+    ./packages.nix
     ./git.nix
   ];
 
