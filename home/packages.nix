@@ -54,7 +54,7 @@ in {
     orbstack
     rapidapi
     tableplus
-    proxyman
+    # proxyman - package not available 
     insomnia
     raycast
     notion-app
