@@ -50,7 +50,7 @@ in {
     mise
 
     # macOS GUI Apps
-    ghostty
+    ghostty-bin
     orbstack
     rapidapi
     tableplus
