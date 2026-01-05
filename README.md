@@ -58,11 +58,6 @@ make gc
    make darwin
    ```
 
-5. Install tool versions (optional):
-   ```bash
-   mise install
-   ```
-
 ## Resources
 
 - [nix-darwin](https://github.com/LnL7/nix-darwin)
