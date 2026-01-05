@@ -47,8 +47,8 @@
           "/Applications/VSCodium.app"
         ];
         persistent-others = [
-          "~/Downloads"
-          "~/Desktop"
+          "/Users/dan/Downloads"
+          "/Users/dan/Desktop"
         ];
       };
 
