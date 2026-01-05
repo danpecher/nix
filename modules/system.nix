@@ -61,6 +61,8 @@
         Clicking = true;  # enable tap to click
         TrackpadRightClick = true;  # enable two finger right click
         TrackpadThreeFingerDrag = true;  # enable three finger drag
+        ActuationStrength = 0;  # light haptic feedback
+        FirstClickThreshold = 0;  # light click pressure
       };
 
       # customize settings that not supported by nix-darwin directly
