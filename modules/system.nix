@@ -40,9 +40,16 @@
         autohide = true;
         show-recents = false;
 
-        # Clear all default apps from dock
-        persistent-apps = [];
-        persistent-others = [];
+        persistent-apps = [
+          "/Applications/Ghostty.app"
+          "/Applications/Notion.app"
+          "/System/Applications/Safari.app"
+          "/Applications/VSCodium.app"
+        ];
+        persistent-others = [
+          "~/Downloads"
+          "~/Desktop"
+        ];
       };
 
       # customize finder
@@ -102,6 +109,13 @@
         ".GlobalPreferences" = {
           # automatically switch to a new space when switching to the application
           AppleSpacesSwitchOnActivate = true;
+        };
+        # Disable Spotlight shortcuts (to use ⌘+Space for Raycast)
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            "64" = { enabled = false; };  # Spotlight Search
+            "65" = { enabled = false; };  # Spotlight Window
+          };
         };
         NSGlobalDomain = {
           # Add a context menu item for showing the Web Inspector in web views
@@ -194,4 +208,9 @@
       nerd-fonts.iosevka
     ];
   };
+
+  # Apply settings without requiring logout
+  system.activationScripts.postUserActivation.text = ''
+    /System/Library/PrivateFrameworks/SystemAdministration.framework/Resources/activateSettings -u
+  '';
 }
