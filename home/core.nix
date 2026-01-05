@@ -33,6 +33,21 @@
     lazygit
     delta           # better git diffs
     mise
+
+    # macOS GUI Apps
+    zed-editor
+    ghostty
+    orbstack
+    rapidapi
+    tableplus
+    proxyman
+    insomnia
+    raycast
+    notion
+    claude
+    claude-code
+    aerospace
+    monitorcontrol
   ];
 
   programs = {

@@ -36,10 +36,4 @@
       };
     };
   }];
-
-  # macOS GUI apps - install manually from their websites or Mac App Store:
-  # Development: Zed, Ghostty, OrbStack, RapidAPI, TablePlus, Proxyman, Insomnia
-  # Productivity: Raycast, Notion
-  # AI: Claude, Claude Code
-  # Utilities: AeroSpace (nikitabobko/aerospace), MonitorControl
 }

@@ -44,18 +44,6 @@ make gc
 2. Clone this repo to `~/code/nix`
 3. Run `make darwin`
 
-## Manual App Installation
-
-The following macOS GUI apps are not available in nixpkgs and should be installed manually:
-
-**Development:** Zed, Ghostty, OrbStack, RapidAPI, TablePlus, Proxyman, Insomnia
-
-**Productivity:** Raycast, Notion
-
-**AI:** Claude, Claude Code
-
-**Utilities:** AeroSpace, MonitorControl
-
 ## Resources
 
 - [nix-darwin](https://github.com/LnL7/nix-darwin)
