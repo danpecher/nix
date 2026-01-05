@@ -40,9 +40,28 @@ make gc
 
 ## First-time Setup
 
-1. Install Nix: https://nixos.org/download
-2. Clone this repo to `~/code/nix`
-3. Run `make darwin`
+1. Install Nix:
+   ```bash
+   sh <(curl -L https://nixos.org/nix/install)
+   ```
+
+2. **Open a new terminal** (required for nix to be available)
+
+3. Clone this repo:
+   ```bash
+   git clone <repo-url> ~/code/nix
+   cd ~/code/nix
+   ```
+
+4. Apply the configuration:
+   ```bash
+   make darwin
+   ```
+
+5. Install tool versions (optional):
+   ```bash
+   mise install
+   ```
 
 ## Resources
 
