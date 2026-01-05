@@ -1,4 +1,19 @@
-{pkgs, ...}: {
+{pkgs, ...}:
+let
+  vscodeSettings = {
+    "workbench.colorTheme" = "Visual Studio Dark";
+    "claudeCode.preferredLocation" = "sidebar";
+    "claudeCode.selectedModel" = "opus";
+    "git.autofetch" = true;
+    "workbench.editorAssociations" = {
+      "*.md" = "vscode.markdown.preview.editor";
+    };
+    "workbench.startupEditor" = "none";
+    "vim.leader" = "<space>";
+    "vim.easymotion" = true;
+    "vim.easymotionKeys" = "hklyuiopnm,qwertzxcvbasdgjf;";
+  };
+in {
   home.packages = with pkgs; [
     # CLI Essentials
     git
@@ -70,6 +85,17 @@
           show_hidden = true;
           sort_dir_first = true;
         };
+      };
+    };
+
+    vscode = {
+      enable = true;
+      package = pkgs.vscodium;
+      profiles.default = {
+        extensions = with pkgs.vscode-extensions; [
+          vscodevim.vim
+        ];
+        userSettings = vscodeSettings;
       };
     };
   };

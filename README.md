@@ -23,8 +23,7 @@ make gc
 ├── flake.nix           # Entry point - defines inputs and system config
 ├── modules/            # System-level configuration
 │   ├── core.nix        # Nix daemon, hostname, user setup
-│   ├── system.nix      # macOS defaults (dock, keyboard, finder, etc.)
-│   └── apps.nix        # System packages and VSCodium config
+│   └── system.nix      # macOS defaults (dock, keyboard, finder, etc.)
 ├── home/               # User configuration (home-manager)
 │   ├── default.nix     # Entry point + dotfile mappings
 │   ├── core.nix        # User packages and programs

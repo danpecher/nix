@@ -6,6 +6,8 @@
   ...
 }:
 {
+  nixpkgs.config.allowUnfree = true;
+
   # Host configuration
   networking.hostName = hostname;
   networking.computerName = hostname;
