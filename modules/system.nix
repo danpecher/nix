@@ -41,10 +41,10 @@
         show-recents = false;
 
         persistent-apps = [
-          "/Applications/Ghostty.app"
-          "/Applications/Notion.app"
-          "/System/Applications/Safari.app"
-          "/Applications/VSCodium.app"
+          "/Users/dan/Applications/Home\ Manager\ Apps/Ghostty.app"
+          "/Users/dan/Applications/Home\ Manager\ Apps/Notion.app"
+          "/System/Cryptexes/App/System/Applications/Safari.app"
+          "/Users/dan/Applications/Home\ Manager\ Apps/VSCodium.app"
         ];
         persistent-others = [
           "/Users/dan/Downloads"

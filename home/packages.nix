@@ -24,6 +24,7 @@ in {
     yq
     aria2
     gnupg
+    tmux
 
     # Modern CLI replacements
     ripgrep         # rg - fast search
