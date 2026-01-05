@@ -65,7 +65,7 @@ in {
     claude-code
     aerospace
     monitorcontrol
-    vial
+    # vial - package not available
   ];
 
   programs = {
