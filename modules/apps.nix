@@ -37,41 +37,9 @@
     };
   }];
 
-  # Homebrew (install manually first: https://brew.sh)
-  homebrew = {
-    enable = true;
-
-    onActivation = {
-      autoUpdate = true;
-      upgrade = true;
-      cleanup = "zap"; # Remove formulae not in this list
-    };
-
-    masApps = {};
-    brews = [];
-
-    casks = [
-      # Development
-      "zed"
-      "vscodium"
-      "ghostty"
-      "orbstack"
-      "rapidapi"
-      "tableplus"
-      "proxyman"
-      "insomnia"
-
-      # Productivity
-      "raycast"
-      "notion"
-
-      # AI
-      "claude"
-      "claude-code"
-
-      # Utilities
-      "nikitabobko/tap/aerospace"
-      "monitorcontrol"
-    ];
-  };
+  # macOS GUI apps - install manually from their websites or Mac App Store:
+  # Development: Zed, Ghostty, OrbStack, RapidAPI, TablePlus, Proxyman, Insomnia
+  # Productivity: Raycast, Notion
+  # AI: Claude, Claude Code
+  # Utilities: AeroSpace (nikitabobko/aerospace), MonitorControl
 }

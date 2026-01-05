@@ -24,7 +24,7 @@ make gc
 ├── modules/            # System-level configuration
 │   ├── core.nix        # Nix daemon, hostname, user setup
 │   ├── system.nix      # macOS defaults (dock, keyboard, finder, etc.)
-│   └── apps.nix        # System packages and Homebrew apps
+│   └── apps.nix        # System packages and VSCodium config
 ├── home/               # User configuration (home-manager)
 │   ├── default.nix     # Entry point + dotfile mappings
 │   ├── core.nix        # User packages and programs
@@ -41,9 +41,20 @@ make gc
 ## First-time Setup
 
 1. Install Nix: https://nixos.org/download
-2. Install Homebrew: https://brew.sh
-3. Clone this repo to `~/code/nix`
-4. Run `make darwin`
+2. Clone this repo to `~/code/nix`
+3. Run `make darwin`
+
+## Manual App Installation
+
+The following macOS GUI apps are not available in nixpkgs and should be installed manually:
+
+**Development:** Zed, Ghostty, OrbStack, RapidAPI, TablePlus, Proxyman, Insomnia
+
+**Productivity:** Raycast, Notion
+
+**AI:** Claude, Claude Code
+
+**Utilities:** AeroSpace, MonitorControl
 
 ## Resources
 
