@@ -62,6 +62,7 @@ in {
     claude-code
     aerospace
     monitorcontrol
+    vial
   ];
 
   programs = {
