@@ -163,6 +163,18 @@
         "com.apple.LaunchServices" = {
           LSQuarantine = false;
         };
+        # Safari settings
+        "com.apple.Safari" = {
+          AlwaysRestoreSessionAtLaunch = true;  # Resume previous session
+          ExcludePrivateWindowWhenRestoringSessionAtLaunch = true;
+          ShowOverlayStatusBar = true;
+          WebKitDeveloperExtrasEnabledPreferenceKey = true;  # Enable developer tools
+          "WebKitPreferences.developerExtrasEnabled" = true;
+          IncludeDevelopMenu = true;
+          AutoFillPasswords = false;
+          AutoFillCreditCardData = false;
+          WebAutomaticSpellingCorrectionEnabled = false;  # Disable autocorrect
+        };
       };
 
       loginwindow = {

@@ -91,6 +91,11 @@
     };
 
     initContent = ''
+      # Auto-start tmux (skip if already in tmux, in VSCode, or non-interactive)
+      if [[ -z "$TMUX" && -z "$VSCODE_INJECTION" && $- == *i* ]]; then
+        tmux new-session -A -s main
+      fi
+
       # Homebrew (needs to be early for PATH)
       if [[ -f "/opt/homebrew/bin/brew" ]]; then
           eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -9,6 +9,8 @@ let
       "*.md" = "vscode.markdown.preview.editor";
     };
     "workbench.startupEditor" = "none";
+    "editor.fontFamily" = "'FiraCode Nerd Font', 'Fira Code', monospace";
+    "editor.fontLigatures" = true;
     "vim.leader" = "<space>";
     "vim.easymotion" = true;
     "vim.easymotionKeys" = "hklyuiopnm,qwertzxcvbasdgjf;";
@@ -44,6 +46,7 @@ in {
 
     # Shell & Terminal
     starship
+    tmux
 
     # Development Tools
     lazygit
@@ -96,6 +99,7 @@ in {
       profiles.default = {
         extensions = with pkgs.vscode-extensions; [
           vscodevim.vim
+          eamodio.gitlens
         ];
         userSettings = vscodeSettings;
       };
