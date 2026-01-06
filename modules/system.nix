@@ -172,7 +172,7 @@
           IncludeDevelopMenu = true;
           WebKitDeveloperExtrasEnabledPreferenceKey = true;
           WebAutomaticSpellingCorrectionEnabled = false;  # Disable autocorrect
-WebContinuousSpellCheckingEnabled = true;
+          WebContinuousSpellCheckingEnabled = true;
           AutoFillFromAddressBook = false;
           AutoFillCreditCardData = false;
           AutoFillMiscellaneousForms = false;
