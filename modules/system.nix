@@ -168,18 +168,23 @@
           AlwaysRestoreSessionAtLaunch = true;  # Resume previous session
           ExcludePrivateWindowWhenRestoringSessionAtLaunch = true;
           ShowOverlayStatusBar = true;
-          WebKitDeveloperExtrasEnabledPreferenceKey = true;  # Enable developer tools
-          "WebKitPreferences.developerExtrasEnabled" = true;
+          IncludeInternalDebugMenu = true;
           IncludeDevelopMenu = true;
-          AutoFillPasswords = false;
-          AutoFillCreditCardData = false;
+          WebKitDeveloperExtrasEnabledPreferenceKey = true;
           WebAutomaticSpellingCorrectionEnabled = false;  # Disable autocorrect
+WebContinuousSpellCheckingEnabled = true;
+          AutoFillFromAddressBook = false;
+          AutoFillCreditCardData = false;
+          AutoFillMiscellaneousForms = false;
+          WarnAboutFraudulentWebsites = true;
+          WebKitJavaEnabled = false;
+          WebKitJavaScriptCanOpenWindowsAutomatically = false;
+          "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" = true;
         };
       };
 
       loginwindow = {
         GuestEnabled = false;  # disable guest user
-        SHOWFULLNAME = true;  # show full name in login window
       };
 
       controlcenter = {
