@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs-darwin.url = "github:nixos/nixpkgs/nixpkgs-25.11-darwin";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -30,10 +31,15 @@
     system = "aarch64-darwin";
     hostname = "dan-mbp";
 
+    pkgs-unstable = import inputs.nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     specialArgs =
       inputs
       // {
-        inherit username useremail hostname;
+        inherit username useremail hostname pkgs-unstable;
       };
   in {
     darwinConfigurations."${hostname}" = darwin.lib.darwinSystem {

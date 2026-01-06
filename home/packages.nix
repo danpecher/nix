@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, pkgs-unstable, ...}:
 let
   vscodeSettings = {
     "workbench.colorTheme" = "Visual Studio Dark";
@@ -51,7 +51,7 @@ in {
     # Development Tools
     lazygit
     delta           # better git diffs
-    mise
+    pkgs-unstable.mise  # Using unstable for latest version
 
     # macOS GUI Apps
     ghostty-bin
