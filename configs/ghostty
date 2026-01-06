@@ -78,6 +78,10 @@ scrollback-limit = 10000
 # =============================================================================
 # Keybindings
 # =============================================================================
+# Global shortcut to toggle quick terminal (Hyper+T = Cmd+Ctrl+Alt+Shift+T)
+# Requires Accessibility permissions in System Settings > Privacy & Security
+keybind = global:super+ctrl+alt+shift+t=toggle_quick_terminal
+
 # Split panes (if using multiplexer features)
 # keybind = cmd+d=new_split:right
 # keybind = cmd+shift+d=new_split:down

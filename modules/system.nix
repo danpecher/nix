@@ -40,9 +40,16 @@
         autohide = true;
         show-recents = false;
 
-        # Clear all default apps from dock
-        persistent-apps = [];
-        persistent-others = [];
+        persistent-apps = [
+          "/Users/dan/Applications/Home\ Manager\ Apps/Ghostty.app"
+          "/Users/dan/Applications/Home\ Manager\ Apps/Notion.app"
+          "/System/Cryptexes/App/System/Applications/Safari.app"
+          "/Users/dan/Applications/Home\ Manager\ Apps/VSCodium.app"
+        ];
+        persistent-others = [
+          "/Users/dan/Downloads"
+          "/Users/dan/Desktop"
+        ];
       };
 
       # customize finder
@@ -58,10 +65,11 @@
 
       # customize trackpad
       trackpad = {
-        # tap - 轻触触摸板, click - 点击触摸板
-        Clicking = true;  # enable tap to click(轻触触摸板相当于点击)
+        Clicking = true;  # enable tap to click
         TrackpadRightClick = true;  # enable two finger right click
         TrackpadThreeFingerDrag = true;  # enable three finger drag
+        ActuationStrength = 0;  # light haptic feedback
+        FirstClickThreshold = 0;  # light click pressure
       };
 
       # customize settings that not supported by nix-darwin directly
@@ -82,12 +90,12 @@
         # sets how fast it repeats once it starts. 
         KeyRepeat = 3;  # normal minimum is 2 (30 ms), maximum is 120 (1800 ms)
 
-        NSAutomaticCapitalizationEnabled = false;  # disable auto capitalization(自动大写)
-        NSAutomaticDashSubstitutionEnabled = false;  # disable auto dash substitution(智能破折号替换)
-        NSAutomaticPeriodSubstitutionEnabled = false;  # disable auto period substitution(智能句号替换)
-        NSAutomaticQuoteSubstitutionEnabled = false;  # disable auto quote substitution(智能引号替换)
-        NSAutomaticSpellingCorrectionEnabled = false;  # disable auto spelling correction(自动拼写检查)
-        NSNavPanelExpandedStateForSaveMode = true;  # expand save panel by default(保存文件时的路径选择/文件名输入页)
+        NSAutomaticCapitalizationEnabled = false;  # disable auto capitalization
+        NSAutomaticDashSubstitutionEnabled = false;  # disable auto dash substitution
+        NSAutomaticPeriodSubstitutionEnabled = false;  # disable auto period substitution
+        NSAutomaticQuoteSubstitutionEnabled = false;  # disable auto quote substitution
+        NSAutomaticSpellingCorrectionEnabled = false;  # disable auto spelling correction
+        NSNavPanelExpandedStateForSaveMode = true;  # expand save panel by default
         NSNavPanelExpandedStateForSaveMode2 = true;
       };
 
@@ -101,6 +109,13 @@
         ".GlobalPreferences" = {
           # automatically switch to a new space when switching to the application
           AppleSpacesSwitchOnActivate = true;
+        };
+        # Disable Spotlight shortcuts (to use ⌘+Space for Raycast)
+        "com.apple.symbolichotkeys" = {
+          AppleSymbolicHotKeys = {
+            "64" = { enabled = false; };  # Spotlight Search
+            "65" = { enabled = false; };  # Spotlight Window
+          };
         };
         NSGlobalDomain = {
           # Add a context menu item for showing the Web Inspector in web views
@@ -148,11 +163,28 @@
         "com.apple.LaunchServices" = {
           LSQuarantine = false;
         };
+        # Safari settings
+        "com.apple.Safari" = {
+          AlwaysRestoreSessionAtLaunch = true;  # Resume previous session
+          ExcludePrivateWindowWhenRestoringSessionAtLaunch = true;
+          ShowOverlayStatusBar = true;
+          IncludeInternalDebugMenu = true;
+          IncludeDevelopMenu = true;
+          WebKitDeveloperExtrasEnabledPreferenceKey = true;
+          WebAutomaticSpellingCorrectionEnabled = false;  # Disable autocorrect
+          WebContinuousSpellCheckingEnabled = true;
+          AutoFillFromAddressBook = false;
+          AutoFillCreditCardData = false;
+          AutoFillMiscellaneousForms = false;
+          WarnAboutFraudulentWebsites = true;
+          WebKitJavaEnabled = false;
+          WebKitJavaScriptCanOpenWindowsAutomatically = false;
+          "com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled" = true;
+        };
       };
 
       loginwindow = {
         GuestEnabled = false;  # disable guest user
-        SHOWFULLNAME = true;  # show full name in login window
       };
 
       controlcenter = {
@@ -193,4 +225,5 @@
       nerd-fonts.iosevka
     ];
   };
+
 }

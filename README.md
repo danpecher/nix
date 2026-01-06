@@ -23,11 +23,10 @@ make gc
 ├── flake.nix           # Entry point - defines inputs and system config
 ├── modules/            # System-level configuration
 │   ├── core.nix        # Nix daemon, hostname, user setup
-│   ├── system.nix      # macOS defaults (dock, keyboard, finder, etc.)
-│   └── apps.nix        # System packages and Homebrew apps
+│   └── system.nix      # macOS defaults (dock, keyboard, finder, etc.)
 ├── home/               # User configuration (home-manager)
 │   ├── default.nix     # Entry point + dotfile mappings
-│   ├── core.nix        # User packages and programs
+│   ├── packages.nix    # User packages and programs
 │   ├── shell.nix       # Zsh config and Starship prompt
 │   └── git.nix         # Git configuration
 └── configs/            # Application dotfiles
@@ -40,10 +39,23 @@ make gc
 
 ## First-time Setup
 
-1. Install Nix: https://nixos.org/download
-2. Install Homebrew: https://brew.sh
-3. Clone this repo to `~/code/nix`
-4. Run `make darwin`
+1. Install Nix:
+   ```bash
+   sh <(curl -L https://nixos.org/nix/install)
+   ```
+
+2. **Open a new terminal** (required for nix to be available)
+
+3. Clone this repo:
+   ```bash
+   git clone <repo-url> ~/code/nix
+   cd ~/code/nix
+   ```
+
+4. Apply the configuration:
+   ```bash
+   make darwin
+   ```
 
 ## Resources
 

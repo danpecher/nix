@@ -52,10 +52,10 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = 8
 inner.vertical = 8
-outer.left = 16
-outer.bottom = 16
-outer.top = 16
-outer.right = 16
+outer.left = 8
+outer.bottom = 8
+outer.top = 8
+outer.right = 8
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -105,17 +105,13 @@ alt-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 ctrl-alt-shift-cmd-u = 'workspace Web'
 ctrl-alt-shift-cmd-i = 'workspace Code'
-# ctrl-alt-shift-cmd-d = 'workspace Cursor'
 ctrl-alt-shift-cmd-m = 'workspace Files'
-
 ctrl-alt-shift-cmd-n = 'workspace Extra1'
 ctrl-alt-shift-cmd-o = 'workspace Git'
 
 alt-u = 'move-node-to-workspace Web --focus-follows-window'
 alt-i = 'move-node-to-workspace Code --focus-follows-window'
-# alt-d = 'move-node-to-workspace Cursor --focus-follows-window'
 alt-m = 'move-node-to-workspace Files --focus-follows-window'
-
 alt-n = 'move-node-to-workspace Extra1 --focus-follows-window'
 alt-o = 'move-node-to-workspace Git --focus-follows-window'
 
@@ -126,7 +122,7 @@ alt-tab = 'workspace-back-and-forth'
 alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
-alt-shift-semicolon = 'mode service'
+ctrl-alt-shift-cmd-semicolon = 'mode service'
 
 # 'service' binding mode declaration.
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
@@ -139,34 +135,12 @@ f = [
 ] # Toggle between floating and tiling layout
 backspace = ['close-all-windows-but-current', 'mode main']
 
-
-alt-shift-h = ['join-with left', 'mode main']
-alt-shift-j = ['join-with down', 'mode main']
-alt-shift-k = ['join-with up', 'mode main']
-alt-shift-l = ['join-with right', 'mode main']
-
-down = 'volume down'
-up = 'volume up'
-shift-down = ['volume set 0', 'mode main']
+ctrl-alt-shift-cmd-h = ['join-with left', 'mode main']
+ctrl-alt-shift-cmd-j = ['join-with down', 'mode main']
+ctrl-alt-shift-cmd-k = ['join-with up', 'mode main']
+ctrl-alt-shift-cmd-l = ['join-with right', 'mode main']
 
 ### Custom
-[[on-window-detected]]
-if.app-id = "app.zen-browser.zen"
-if.window-title-regex-substring = "Picture-in-Picture"
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = "com.toggl.daneel"
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.cisco.secureclient.gui'
-run = 'layout floating'
-
-[[on-window-detected]]
-if.app-id = 'com.tomito.tomito'
-run = 'layout floating'
-
 # --- Workspace: Xcode ---
 # disabled because of cmd+p
 # [[on-window-detected]]
@@ -177,11 +151,6 @@ run = 'layout floating'
 if.app-id = "com.apple.iphonesimulator"
 run = ["layout floating", "move-node-to-workspace Code"]
 
-# --- Workspace: Zen ---
-[[on-window-detected]]
-if.app-id = "app.zen-browser.zen"
-run = "move-node-to-workspace Web"
-
 # --- Workspace: Fork ---
 [[on-window-detected]]
 if.app-id = "com.DanPristupov.Fork"
@@ -191,6 +160,10 @@ run = ['layout floating', 'move-node-to-workspace Git']
 [[on-window-detected]]
 if.app-id = "com.tinyspeck.slackmacgap"
 run = "move-node-to-workspace Comm"
+
+[[on-window-detected]]
+if.app-id = "com.apple.Safari"
+run = "move-node-to-workspace Web"
 
 [[on-window-detected]]
 if.app-id = "com.apple.mail"
